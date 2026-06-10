@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaden Alvarino — Aerospace Engineer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #F5F5F3;
+      --surface:  #FFFFFF;
+      --border:   rgba(0,0,0,0.1);
+      --border-md:rgba(0,0,0,0.18);
+      --text:     #1A1A1A;
+      --muted:    #555555;
+      --hint:     #999999;
+      --blue-bg:  #E6F1FB;
+      --blue:     #185FA5;
+      --teal-bg:  #E1F5EE;
+      --teal:     #0F6E56;
+      --amber-bg: #FAEEDA;
+      --amber:    #854F0B;
+      --purple-bg:#EEEDFE;
+      --purple:   #534AB7;
+      --radius-md:8px;
+      --radius-lg:12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:       #1A1A1A;
+        --surface:  #242424;
+        --border:   rgba(255,255,255,0.1);
+        --border-md:rgba(255,255,255,0.18);
+        --text:     #EBEBEB;
+        --muted:    #AAAAAA;
+        --hint:     #666666;
+        --blue-bg:  #042C53;
+        --blue:     #85B7EB;
+        --teal-bg:  #04342C;
+        --teal:     #5DCAA5;
+        --amber-bg: #412402;
+        --amber:    #FAC775;
+        --purple-bg:#26215C;
+        --purple:   #AFA9EC;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .avatar {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: var(--blue-bg);
+      color: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 500;
+      flex-shrink: 0;
+    }
+    .hero-text { flex: 1; min-width: 220px; }
+    .hero-name { font-size: 26px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 2px; }
+    .hero-role { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+    .hero-bio  { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 14px; }
+    .links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 13px; padding: 5px 12px;
+      border-radius: var(--radius-md);
+      border: 0.5px solid var(--border-md);
+      background: var(--bg);
+      color: var(--muted);
+      transition: background .15s;
+    }
+    .pill:hover { background: var(--border); }
+    .pill.resume { border-color: var(--blue); color: var(--blue); background: var(--blue-bg); }
+    .pill i { font-size: 15px; }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: .09em;
+      color: var(--hint);
+      text-transform: uppercase;
+      margin: 2rem 0 .75rem;
+    }
+
+    /* ── Project cards ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.25rem 1rem;
+      display: flex; flex-direction: column; gap: .5rem;
+    }
+    .card-top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: .5rem;
+    }
+    .card-icon {
+      width: 36px; height: 36px;
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 18px;
+    }
+    .icon-blue   { background: var(--blue-bg);   color: var(--blue);   }
+    .icon-teal   { background: var(--teal-bg);   color: var(--teal);   }
+    .icon-amber  { background: var(--amber-bg);  color: var(--amber);  }
+    .icon-purple { background: var(--purple-bg); color: var(--purple); }
+
+    .card-title { font-size: 15px; font-weight: 500; flex: 1; }
+    .tag {
+      font-size: 11px; font-weight: 500;
+      padding: 3px 9px; border-radius: var(--radius-md);
+      white-space: nowrap;
+    }
+    .tag-blue   { background: var(--blue-bg);   color: var(--blue);   }
+    .tag-teal   { background: var(--teal-bg);   color: var(--teal);   }
+    .tag-amber  { background: var(--amber-bg);  color: var(--amber);  }
+    .tag-purple { background: var(--purple-bg); color: var(--purple); }
+
+    .card-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .card-footer {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding-top: .6rem;
+      border-top: 0.5px solid var(--border);
+      margin-top: .25rem;
+      flex-wrap: wrap; gap: .5rem;
+    }
+    .tech-list { display: flex; gap: 5px; flex-wrap: wrap; }
+    .tech {
+      font-size: 11px; padding: 2px 7px;
+      border-radius: var(--radius-md);
+      background: var(--bg);
+      color: var(--muted);
+      border: 0.5px solid var(--border);
+    }
+    .card-link {
+      font-size: 12px; color: var(--blue);
+      display: inline-flex; align-items: center; gap: 3px;
+    }
+    .card-link i { font-size: 13px; }
+    .placeholder { font-size: 12px; color: var(--hint); font-style: italic; }
+
+    /* ── Experience ── */
+    .exp-list { display: flex; flex-direction: column; gap: .75rem; }
+    .exp-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem;
+      display: grid;
+      grid-template-columns: 10px 1fr auto;
+      gap: .5rem 1rem;
+      align-items: start;
+    }
+    .exp-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--blue);
+      margin-top: 5px;
+    }
+    .exp-title   { font-size: 14px; font-weight: 500; }
+    .exp-company { font-size: 13px; color: var(--muted); }
+    .exp-desc    { font-size: 13px; color: var(--muted); margin-top: 4px; line-height: 1.55; }
+    .exp-date    { font-size: 12px; color: var(--hint); text-align: right; white-space: nowrap; }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: .75rem;
+    }
+    .skill-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: .85rem 1rem;
+    }
+    .skill-label {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: .06em; color: var(--hint);
+      text-transform: uppercase; margin-bottom: .4rem;
+    }
+    .skill-items { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 0.5px solid var(--border);
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: .5rem;
+    }
+    .footer-note { font-size: 12px; color: var(--hint); }
+
+    @media (max-width: 540px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<main class="wrap">
+
+  <!-- ── Hero ─────────────────────────────────────── -->
+  <div class="hero">
+    <div class="avatar">KA</div>
+    <div class="hero-text">
+      <h1 class="hero-name">Kaden Alvarino</h1>
+      <p class="hero-role">Aerospace Engineering · NC State University, May 2026</p>
+      <p class="hero-bio">
+        Hands-on aerospace engineer focused on aerodynamics, flight controls, autonomous systems,
+        and fabrication. Built a 25 lb hybrid VTOL drone, developed microfabrication processes for
+        quantum computing research, and interned in semiconductor process engineering at Qorvo.
+        Fluent in Spanish. Willing to relocate.
+      </p>
+      <nav class="links" aria-label="Contact and documents">
+        <!-- ✏️ Replace YOUR_RESUME_LINK_HERE with a direct link to your PDF resume (e.g. Google Drive, Dropbox) -->
+        <a class="pill resume" href="YOUR_RESUME_LINK_HERE">
+          <i class="ti ti-file-cv" aria-hidden="true"></i> Resume
+        </a>
+        <a class="pill" href="https://linkedin.com/in/kadenalvarino">
+          <i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn
+        </a>
+        <a class="pill" href="mailto:kaalvari@ncsu.edu">
+          <i class="ti ti-mail" aria-hidden="true"></i> Email
+        </a>
+        <!-- ✏️ Replace YOUR_USERNAME with your GitHub username -->
+        <a class="pill" href="https://github.com/YOUR_USERNAME">
+          <i class="ti ti-brand-github" aria-hidden="true"></i> GitHub
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ── Projects ──────────────────────────────────── -->
+  <p class="section-label">Projects</p>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon icon-blue"><i class="ti ti-drone" aria-hidden="true"></i></div>
+        <h2 class="card-title">Hybrid VTOL — NC Forestry Service</h2>
+        <span class="tag tag-blue">Senior Design</span>
+      </div>
+      <p class="card-desc">
+        Designed and constructed a 25 lb hybrid VTOL aircraft on a $1,500 budget. Programmed an
+        autopilot mode for seed dispersal and radio relay missions over forested terrain. Full mission
+        intent, risk evaluation, and feasibility documentation produced for the NC Forestry Service.
+      </p>
+      <div class="card-footer">
+        <div class="tech-list">
+          <span class="tech">Autopilot</span>
+          <span class="tech">VTOL</span>
+          <span class="tech">CAD</span>
+          <span class="tech">Systems</span>
+        </div>
+        <!-- ✏️ Replace YOUR_FINAL_REPORT_LINK_HERE with your report URL -->
+        <a class="card-link" href="YOUR_FINAL_REPORT_LINK_HERE">
+          Final report <i class="ti ti-external-link" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon icon-amber"><i class="ti ti-plane" aria-hidden="true"></i></div>
+        <h2 class="card-title">DARPA Lift Challenge</h2>
+        <span class="tag tag-amber">Competition</span>
+      </div>
+      <p class="card-desc">
+        Lead engineer on an NCSU team competing for a $6M prize pool. Designed an aircraft capable
+        of carrying a payload 4× its own weight. Applied structural and aerodynamic analysis to
+        validate design prior to construction.
+      </p>
+      <div class="card-footer">
+        <div class="tech-list">
+          <span class="tech">Structures</span>
+          <span class="tech">Aero</span>
+          <span class="tech">Team lead</span>
+        </div>
+        <!-- ✏️ Add a link to any documentation or repo when available -->
+        <span class="placeholder">Add repo or report link</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon icon-purple"><i class="ti ti-atom" aria-hidden="true"></i></div>
+        <h2 class="card-title">Quantum Refrigerator Air Bridge</h2>
+        <span class="tag tag-purple">Research</span>
+      </div>
+      <p class="card-desc">
+        Led fabrication of an air-bridge structure designed to induce charge through air as a medium
+        in a quantum refrigerator device at the University of Arkansas. Used photolithography, metal
+        deposition, and etching.
+      </p>
+      <div class="card-footer">
+        <div class="tech-list">
+          <span class="tech">Photolithography</span>
+          <span class="tech">Microfab</span>
+          <span class="tech">Superconductors</span>
+        </div>
+        <!-- ✏️ Add a poster, paper, or presentation link if available -->
+        <span class="placeholder">Add paper or poster link</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon icon-teal"><i class="ti ti-car" aria-hidden="true"></i></div>
+        <h2 class="card-title">Automotive Repair & Resale</h2>
+        <span class="tag tag-teal">Entrepreneurship</span>
+      </div>
+      <p class="card-desc">
+        Founded and operated an automotive repair and resale business from 2019 onward. Acquired,
+        repaired, and sold 20+ cars and motorcycles — developing hands-on mechanical skills alongside
+        business and financial operations.
+      </p>
+      <div class="card-footer">
+        <div class="tech-list">
+          <span class="tech">Fabrication</span>
+          <span class="tech">Operations</span>
+          <span class="tech">Finance</span>
+        </div>
+        <span class="placeholder">Self-employed · 2019–present</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Experience ─────────────────────────────────── -->
+  <p class="section-label">Experience</p>
+  <div class="exp-list">
+
+    <div class="exp-card">
+      <div class="exp-dot"></div>
+      <div>
+        <p class="exp-title">Process Engineering Intern</p>
+        <p class="exp-company">Qorvo · Greensboro, NC</p>
+        <p class="exp-desc">
+          Calibrated photoresist spin equipment and computed spin curves to improve coating
+          consistency. Optimized lithography processes for yield and throughput. Led intern
+          engagement program for 54 interns.
+          <!-- ✏️ Add any notable results or linked projects from your internship here -->
+        </p>
+      </div>
+      <div class="exp-date">May – Aug 2025</div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-dot"></div>
+      <div>
+        <p class="exp-title">Undergraduate Researcher in Physics</p>
+        <p class="exp-company">University of Arkansas · Fayetteville, AR</p>
+        <p class="exp-desc">
+          Conducted superconductor research toward quantum computing device fabrication. Led
+          air-bridge fabrication project for a quantum refrigerator.
+          <!-- ✏️ Link a poster, paper, or presentation if available -->
+        </p>
+      </div>
+      <div class="exp-date">May – Jul 2024</div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-dot"></div>
+      <div>
+        <p class="exp-title">HPDE Instructor</p>
+        <p class="exp-company">Porsche Club of America · Carolinas Region</p>
+        <p class="exp-desc">
+          Instructing high-performance driving at VIR, Road Atlanta, Barber Motorsports Park,
+          AMP, and other Carolinas venues.
+        </p>
+      </div>
+      <div class="exp-date">Ongoing</div>
+    </div>
+
+  </div>
+
+  <!-- ── Skills ─────────────────────────────────────── -->
+  <p class="section-label">Skills</p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <p class="skill-label">CAD</p>
+      <div class="skill-items">
+        <span class="tech">SolidWorks</span>
+        <span class="tech">Fusion 360</span>
+        <span class="tech">AutoCAD</span>
+        <span class="tech">KLayout</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <p class="skill-label">Software</p>
+      <div class="skill-items">
+        <span class="tech">MATLAB</span>
+        <span class="tech">Excel</span>
+        <span class="tech">ANSYS</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <p class="skill-label">Fabrication</p>
+      <div class="skill-items">
+        <span class="tech">Photolithography</span>
+        <span class="tech">Metal deposition</span>
+        <span class="tech">Etching</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <p class="skill-label">Languages</p>
+      <div class="skill-items">
+        <span class="tech">Spanish (fluent)</span>
+        <span class="tech">Italian (beginner)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Footer ─────────────────────────────────────── -->
+  <footer>
+    <span class="footer-note">Kaden Alvarino · <a href="mailto:kaalvari@ncsu.edu">kaalvari@ncsu.edu</a> · Willing to relocate</span>
+    <span class="footer-note">NC State University, Aerospace Engineering · 2026</span>
+  </footer>
+
+</main>
+</body>
+</html>
