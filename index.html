@@ -10,19 +10,19 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --bg: #0d0f14;
-      --surface: #14171f;
-      --surface2: #1c2030;
-      --border: rgba(255,255,255,0.08);
-      --border-accent: rgba(82,170,255,0.35);
-      --text: #e8eaf0;
-      --muted: #8891a8;
-      --accent: #52aaff;
-      --accent-dim: rgba(82,170,255,0.12);
-      --mono: 'IBM Plex Mono', monospace;
-      --sans: 'Inter', sans-serif;
-    }
+:root {
+  --bg: #ffffff;
+  --surface: #f5f5f5;
+  --surface2: #ececec;
+  --border: rgba(0,0,0,0.1);
+  --border-accent: rgba(82,170,255,0.5);
+  --text: #1a1a1a;
+  --muted: #6b6b6b;
+  --accent: #2d6fd8;
+  --accent-dim: rgba(45,111,216,0.08);
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'Inter', sans-serif;
+}
 
     body {
       background: var(--bg);
@@ -331,37 +331,34 @@
           </div>
       </div>
     
-    <h2>Unique Design Solutions</h2>
-    <p>STAR is designed to be a universal solution for any mission-dependent aeronautic need. Each system addresses a specific operational challenge.</p>
+<h2>Unique Design Solutions</h2>
+<p>STAR is designed to be a universal solution for any mission-dependent aeronautic need. Each system addresses a specific operational challenge.</p>
 
-    <div class="solutions-grid">
-      <div class="solution-card">
-        <div class="label">Range</div>
-        <p>Two 6s4p 736 Wh custom Li-Ion packs with live BMS and coulomb counting — 360 A continuous draw and approximately 2 hours of efficient flight.</p>
-      </div>
-      <div class="solution-card">
-        <div class="label">Stability</div>
-        <p>2U payload sits at the aircraft CG so payload drops don't shift balance. Wing bracket provides 5° dihedral for sideslip and spiral stability. Autopilot failsafe switches to hover on unexpected attitude exceedance.</p>
-      </div>
-      <div class="solution-card">
-        <div class="label">Size</div>
-        <p>Quick-disconnect detent pins allow wings and tail removal, collapsing STAR into a 4′ × 3′ × 2′ enclosure for transport.</p>
-      </div>
-      <div class="solution-card">
-        <div class="label">Power</div>
-        <p>VTOL motors produce 41 lbs combined thrust; forward-flight motor produces 17 lbs. Both packs combined allow full motor tandem output. Single-pack failure still permits hover in the 10 ft configuration.</p>
-      
-      </div>
-      <div class="photo-panel">
-        <!-- To add a photo: replace the photo-slot div with <img src="your-photo.jpg" alt="STAR aircraft"> -->
-        <img src="Payload 2 - Actual payloads.png" alt="10ft front" style="width:100%; max-width:300px; height:auto; object-fit:cover; border-radius:8px;">
-        <img src="Ians New Battery_Beauty.png" alt="10ft front" style="width:100%; max-width:300px; height:auto; object-fit:cover; border-radius:8px;">
-      </div>
+<div class="star-grid">
+  <div class="solutions-grid">
+    <div class="solution-card">
+      <div class="label">Range</div>
+      <p>Two 6s4p 736 Wh custom Li-Ion packs with live BMS and coulomb counting — 360 A continuous draw and approximately 2 hours of efficient flight.</p>
     </div>
-        <div class="report-btn-wrap">
-          <!-- Replace # with your final report PDF link -->
-          <a class="btn btn-outline" href="Final_Report-compressed.pdf" style="width:100%; justify-content:center;">↓ Final Report (PDF)</a>
+    <div class="solution-card">
+      <div class="label">Stability</div>
+      <p>2U payload sits at the aircraft CG so payload drops don't shift balance. Wing bracket provides 5° dihedral for sideslip and spiral stability. Autopilot failsafe switches to hover on unexpected attitude exceedance.</p>
     </div>
+    <div class="solution-card">
+      <div class="label">Size</div>
+      <p>Quick-disconnect detent pins allow wings and tail removal, collapsing STAR into a 4′ × 3′ × 2′ enclosure for transport.</p>
+    </div>
+    <div class="solution-card">
+      <div class="label">Power</div>
+      <p>VTOL motors produce 41 lbs combined thrust; forward-flight motor produces 17 lbs. Both packs combined allow full motor tandem output. Single-pack failure still permits hover in the 10 ft configuration.</p>
+    </div>
+  </div>
+
+  <div class="photo-panel">
+    <img src="Payload 2 - Actual payloads.png" alt="STAR payload" style="width:100%; height:auto; object-fit:cover; border-radius:8px;">
+    <img src="Ians New Battery_Beauty.png" alt="STAR battery pack" style="width:100%; height:auto; object-fit:cover; border-radius:8px;">
+  </div>
+</div>
   </section>
 
   <section class="section" id="contact">
