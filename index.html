@@ -200,6 +200,26 @@
       line-height: 1.6;
     }
 
+    .bullet-list {
+  list-style: none;
+  margin-top: 0.5rem;
+  padding-left: 0;
+}
+.bullet-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.bullet-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
     /* PHOTO PANEL */
     .photo-panel {
       display: flex;
@@ -453,16 +473,22 @@
   <section class="section" id="internship">
   <p class="section-tag">Industry Application</p>
   <h2>Internship Experience</h2>
-  <p>Replace with a one or two sentence overview of your internship experience — e.g. the industries you've worked in and the type of engineering problems you tackled.</p>
+  <p>On top of my research experience, I have had two summer internships as an engineer. My projects consisted mostly of cost savings and operator satisfaction solutions, requiring 
+  creative problem-solving skills to determine a proper solution.</p>
 
   <div class="experience-list">
     <div class="star-grid">
       <div class="experience-card">
         <div class="experience-header">
-          <h3>Replace with company name</h3>
-          <span class="experience-meta">Replace with dates · location</span>
+          <h3>Legrand</h3>
+          <span class="experience-meta">May 2026 - August 2026 · Concord, NC</span>
         </div>
-        <p>Replace with details — e.g. role, key projects, tools/software used, and measurable outcomes or contributions.</p>
+        <p>My project scope at Legrand covered root cause analysis and design improvements on in-house custom machinery. Using SolidWorks, I created machine profiles and designed a solution that would fit within the existing constraints. Skills I learned from this experience include:</p>
+        <ul class="bullet-list">
+  <li>Incorporating new models into crafted assemblies, ensuring geometric precision of the model.</li>
+  <li>Operating machinery to observe or provoke failure.</li>
+  <li>Using operator feedback to improve existing or previously modified designs.</li>
+        </ul>
       </div>
       </div>
     <div class="star-grid">
