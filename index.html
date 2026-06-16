@@ -270,6 +270,44 @@
       color: var(--muted);
       font-family: var(--mono);
     }
+
+    /* AUTOMOTIVE EXPERIENCE */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.experience-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 0.75rem;
+}
+.experience-header h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.experience-meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+.experience-card p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
   </style>
 </head>
 <body>
@@ -278,7 +316,7 @@
     <span class="nav-name">Kaden Alvarino</span>
     <ul class="nav-links">
       <li><a href="#star">Senior Design</a></li>
-      <li><a href="#design">Design Solutions</a></li>
+      <li><a href="#automotive">Automotive</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -365,6 +403,30 @@
       </div>
 </div>
   </section>
+
+  <section class="section" id="automotive">
+  <p class="section-tag">Hands-On Experience</p>
+  <h2>Automotive Diagnostics & Repair</h2>
+  <p>Beyond aerospace coursework, I've built practical diagnostic and repair experience both professionally and through personal projects — troubleshooting electrical, mechanical, and engine systems on real vehicles.</p>
+
+  <div class="experience-list">
+    <div class="experience-card">
+      <div class="experience-header">
+        <h3>Replace with shop/employer name</h3>
+        <span class="experience-meta">Replace with dates · location</span>
+      </div>
+      <p>Replace with details — e.g. performed diagnostics on engine, electrical, and drivetrain systems; identified fault codes using OBD-II scan tools; completed repairs ranging from brake jobs to sensor replacement; communicated findings to customers and technicians.</p>
+    </div>
+
+    <div class="experience-card">
+      <div class="experience-header">
+        <h3>Personal Projects</h3>
+        <span class="experience-meta">Replace with timeframe</span>
+      </div>
+      <p>Replace with details — e.g. diagnosed and repaired recurring engine misfire on personal vehicle by tracing wiring harness fault; rebuilt brake system including calipers, rotors, and lines; performed routine maintenance and troubleshooting across multiple personal vehicles.</p>
+    </div>
+  </div>
+</section>
 
   <section class="section" id="contact">
     <p class="section-tag">Contact</p>
